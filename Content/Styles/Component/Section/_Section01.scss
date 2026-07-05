@@ -79,11 +79,23 @@
     }
 
     .Section-01-name {
-        margin-top: 20px;
-        font-size: 15px;
-        font-weight: 600;
-        letter-spacing: 0.01em;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 22px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
         color: $text-300;
+
+        i {
+            display: inline-block;
+            width: 28px;
+            height: 2px;
+            border-radius: 2px;
+            background: linear-gradient(120deg, $brand-500, $brand-400);
+        }
     }
 
     .b-item {

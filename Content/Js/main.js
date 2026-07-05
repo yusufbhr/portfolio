@@ -100,6 +100,7 @@ Portfolio.Reveal = {
     },
     Selectors: {
         targets: [
+            ".Section-01 .Section-01-name",
             ".Section-01 .Section-01-pill",
             ".Section-01 .b-item",
             ".Section-01 .b-item-01",
