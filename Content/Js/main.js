@@ -223,12 +223,12 @@ Portfolio.I18n = {
 
     Dict: {
         "meta.title": {
-            tr: "Yusuf Karaca — Frontend Developer",
-            en: "Yusuf Karaca — Frontend Developer"
+            tr: "Yusuf Bahri Karaca — Frontend Developer",
+            en: "Yusuf Bahri Karaca — Frontend Developer"
         },
         "meta.description": {
-            tr: "Yusuf Karaca — İstanbul merkezli Mid-Level Frontend Developer. React, TypeScript, SCSS ve ASP.NET ile hızlı, erişilebilir ve zarif web arayüzleri.",
-            en: "Yusuf Karaca — Istanbul-based Mid-Level Frontend Developer. Fast, accessible, elegant web interfaces built with React, TypeScript, SCSS, and ASP.NET."
+            tr: "Yusuf Bahri Karaca — İstanbul merkezli Mid-Level Frontend Developer. React, TypeScript, SCSS ve ASP.NET ile hızlı, erişilebilir ve zarif web arayüzleri.",
+            en: "Yusuf Bahri Karaca — Istanbul-based Mid-Level Frontend Developer. Fast, accessible, elegant web interfaces built with React, TypeScript, SCSS, and ASP.NET."
         },
         "nav.about": { tr: "Hakkımda", en: "About" },
         "nav.projects": { tr: "Projeler", en: "Projects" },
@@ -239,13 +239,17 @@ Portfolio.I18n = {
             tr: "Freelance & tam zamanlı işlere açığım",
             en: "Available for freelance & full-time roles"
         },
+        "hero.name": {
+            tr: "Yusuf Bahri Karaca",
+            en: "Yusuf Bahri Karaca"
+        },
         "hero.title": {
             tr: 'Dijital ürünleri <span class="hl">hızlı ve zarif</span> arayüzlere dönüştürüyorum.',
             en: 'I turn digital products into <span class="hl">fast, elegant</span> interfaces.'
         },
         "hero.sub": {
-            tr: "Ben Yusuf — 4+ yıl deneyimli Frontend Developer. Lidia e-ticaret ekosisteminin tek frontend mühendisi olarak fikirleri üretime hazır, erişilebilir ve pikselinde arayüzlere dönüştürüyorum.",
-            en: "I'm Yusuf — a Frontend Developer with 4+ years of experience. As the sole frontend engineer for the Lidia e-commerce ecosystem, I turn ideas into production-ready, accessible, pixel-perfect interfaces."
+            tr: "Ben Yusuf Bahri Karaca — 4+ yıl deneyimli Frontend Developer. Lidia e-ticaret ekosisteminin tek frontend mühendisi olarak fikirleri üretime hazır, erişilebilir ve pikselinde arayüzlere dönüştürüyorum.",
+            en: "I'm Yusuf Bahri Karaca — a Frontend Developer with 4+ years of experience. As the sole frontend engineer for the Lidia e-commerce ecosystem, I turn ideas into production-ready, accessible, pixel-perfect interfaces."
         },
         "hero.ctaPrimary": { tr: "Projelerimi gör", en: "See my projects" },
         "hero.ctaSecondary": { tr: "İletişime geç", en: "Get in touch" },
@@ -335,7 +339,7 @@ Portfolio.I18n = {
         },
         "contact.copied": { tr: "Kopyalandı ✓", en: "Copied ✓" },
 
-        "footer.copyright": { tr: "© 2026 Yusuf Karaca — Tüm hakları saklıdır.", en: "© 2026 Yusuf Karaca — All rights reserved." },
+        "footer.copyright": { tr: "© 2026 Yusuf Bahri Karaca — Tüm hakları saklıdır.", en: "© 2026 Yusuf Bahri Karaca — All rights reserved." },
         "footer.built": {
             tr: "İstanbul'da, Bricolage Grotesque + Geist ile tasarlandı.",
             en: "Designed in Istanbul with Bricolage Grotesque + Geist."
