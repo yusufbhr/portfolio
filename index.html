@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yusuf Karaca — Frontend Developer</title>
+    <meta
+      name="description"
+      content="Yusuf Karaca — İstanbul merkezli Mid-Level Frontend Developer. React, TypeScript, SCSS ve ASP.NET ile hızlı, erişilebilir ve zarif web arayüzleri."
+      data-i18n-attr="content:meta.description"
+    />
+    <link rel="icon" type="image/svg+xml" href="Content/Images/favicon.svg" />
+
+    <!-- Geist (body) + Bricolage Grotesque (display); Google Fonts, falls back to system UI font offline -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="Content/Styles/Base.css" />
+    <script src="Content/Js/main.js" defer></script>
+
+    <!-- Three.js (hero ribbon background) -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+        }
+      }
+    </script>
+    <script type="module" src="Content/Js/hero-ribbon.js"></script>
+  </head>
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header class="header-01">
+      <div class="c-wrapper">
+        <a
+          class="logo"
+          href="#hero"
+          aria-label="Ana sayfa"
+          data-i18n-attr="aria-label:aria.homepage"
+        >
+          <img src="Content/Images/brand/monogram.svg" alt="" />
+          <span>Yusuf Bahri <span class="logo-accent">Karaca</span></span>
+        </a>
+
+        <button
+          class="hamb"
+          type="button"
+          aria-label="Menüyü aç/kapat"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          data-i18n-attr="aria-label:aria.menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav
+          class="a-item"
+          id="primary-nav"
+          aria-label="Ana menü"
+          data-i18n-attr="aria-label:aria.mainNav"
+        >
+          <ul class="level-01">
+            <li><a href="#hakkimda" data-i18n="nav.about">Hakkımda</a></li>
+            <li><a href="#projeler" data-i18n="nav.projects">Projeler</a></li>
+            <li><a href="#iletisim" data-i18n="nav.contact">İletişim</a></li>
+            <li class="cv">
+              <a
+                href="Content/Files/Yusuf_Karaca_CV_Turkce.pdf"
+                download="Yusuf_Karaca_CV.pdf"
+                data-i18n="nav.cv"
+                >CV İndir</a
+              >
+            </li>
+            <li
+              class="lang-switch"
+              role="group"
+              data-i18n-attr="aria-label:aria.langSwitch"
+              aria-label="Dil seçimi"
+            >
+              <button type="button" class="lang-btn is-active" data-lang="tr">
+                TR
+              </button>
+              <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ================= HERO ================= -->
+      <section id="hero" class="Section-01">
+        <div class="Section-01-glow" aria-hidden="true"></div>
+        <canvas class="Section-01-canvas" aria-hidden="true"></canvas>
+        <div class="c-wrapper">
+          <span class="Section-01-pill">
+            <i class="dot" aria-hidden="true"></i>
+            <span data-i18n="hero.badge"
+              >Freelance &amp; tam zamanlı işlere açığım</span
+            >
+          </span>
+
+          <h1 class="b-item" data-i18n-html="hero.title">
+            Dijital ürünleri <span class="hl">hızlı ve zarif</span> arayüzlere
+            dönüştürüyorum.
+          </h1>
+
+          <p class="b-item-01" data-i18n="hero.sub">
+            Ben Yusuf — 4+ yıl deneyimli Frontend Developer. Lidia e-ticaret
+            ekosisteminin tek frontend mühendisi olarak fikirleri üretime hazır,
+            erişilebilir ve pikselinde arayüzlere dönüştürüyorum.
+          </p>
+
+          <div class="Section-01-cta">
+            <a class="b-item-02" href="#projeler">
+              <span data-i18n="hero.ctaPrimary">Projelerimi gör</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+            <a class="b-item-03" href="#iletisim" data-i18n="hero.ctaSecondary"
+              >İletişime geç</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= HAKKIMDA + YETENEKLER ================= -->
+      <section id="hakkimda" class="Section-03">
+        <div class="c-wrapper">
+          <div class="Section-03-grid">
+            <div class="Section-03-left">
+              <div class="Micro-Other-01">
+                <span class="Micro-Other-01-eyebrow"
+                  ><i></i><span data-i18n="about.eyebrow">Hakkımda</span></span
+                >
+                <h2 class="c-item-01" data-i18n="about.title">
+                  Uçtan uca tasarlayıp geliştiriyorum.
+                </h2>
+              </div>
+
+              <p class="Section-03-lead" data-i18n="about.p1">
+                4 yılı aşkın süredir modern web standartları, duyarlı tasarım ve
+                bileşen odaklı mimari üzerine çalışıyorum. Arayüzü kusursuz
+                hissettiren detaylara — performans, erişilebilirlik ve akıcı
+                etkileşime — önem veriyorum.
+              </p>
+              <p class="Section-03-lead" data-i18n="about.p2">
+                Feux Digital'de Lidia e-ticaret ekosisteminin (PIM, Console,
+                Merchant Console) tek frontend mühendisiyim; ayrıca TEB, Kale,
+                Kalekim ve Biboya gibi yüksek trafikli kurumsal siteler için
+                kritik geliştirmeler yaptım.
+              </p>
+
+              <div class="Section-03-stats">
+                <div class="Micro-Other-03">
+                  <span class="c-item-01">4+</span>
+                  <span class="c-item-02" data-i18n="about.stat1"
+                    >Yıl deneyim</span
+                  >
+                </div>
+                <div class="Micro-Other-03">
+                  <span class="c-item-01">10+</span>
+                  <span class="c-item-02" data-i18n="about.stat2"
+                    >Kurumsal proje</span
+                  >
+                </div>
+                <div class="Micro-Other-03">
+                  <span class="c-item-01">%30</span>
+                  <span class="c-item-02" data-i18n="about.stat3"
+                    >AI ile hız kazancı</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="Section-03-marquee"
+            aria-label="Yetenekler"
+            data-i18n-attr="aria-label:about.marqueeAria"
+          >
+            <div class="Section-03-marquee-viewport">
+              <div class="Section-03-marquee-track">
+                <ul class="Section-03-marquee-group">
+                  <li class="Micro-Other-02">HTML5</li>
+                  <li class="Micro-Other-02">CSS3</li>
+                  <li class="Micro-Other-02">SCSS</li>
+                  <li class="Micro-Other-02">JavaScript (ES6+)</li>
+                  <li class="Micro-Other-02">React</li>
+                  <li class="Micro-Other-02">TypeScript</li>
+                  <li class="Micro-Other-02">Next.js</li>
+                  <li class="Micro-Other-02">Tailwind CSS</li>
+                  <li class="Micro-Other-02">Bootstrap</li>
+                  <li class="Micro-Other-02">C#</li>
+                  <li class="Micro-Other-02">ASP.NET MVC</li>
+                  <li class="Micro-Other-02">Razor (.cshtml)</li>
+                  <li class="Micro-Other-02">RESTful API</li>
+                  <li class="Micro-Other-02">Git</li>
+                  <li class="Micro-Other-02">GitHub</li>
+                  <li class="Micro-Other-02">Azure DevOps</li>
+                  <li class="Micro-Other-02">Jira</li>
+                  <li class="Micro-Other-02">VS Code</li>
+                  <li class="Micro-Other-02">Figma</li>
+                  <li class="Micro-Other-02">BrowserStack</li>
+                  <li class="Micro-Other-02">Claude API</li>
+                  <li class="Micro-Other-02">Claude Code</li>
+                </ul>
+                <ul class="Section-03-marquee-group" aria-hidden="true">
+                  <li class="Micro-Other-02">HTML5</li>
+                  <li class="Micro-Other-02">CSS3</li>
+                  <li class="Micro-Other-02">SCSS</li>
+                  <li class="Micro-Other-02">JavaScript (ES6+)</li>
+                  <li class="Micro-Other-02">React</li>
+                  <li class="Micro-Other-02">TypeScript</li>
+                  <li class="Micro-Other-02">Next.js</li>
+                  <li class="Micro-Other-02">Tailwind CSS</li>
+                  <li class="Micro-Other-02">Bootstrap</li>
+                  <li class="Micro-Other-02">C#</li>
+                  <li class="Micro-Other-02">ASP.NET MVC</li>
+                  <li class="Micro-Other-02">Razor (.cshtml)</li>
+                  <li class="Micro-Other-02">RESTful API</li>
+                  <li class="Micro-Other-02">Git</li>
+                  <li class="Micro-Other-02">GitHub</li>
+                  <li class="Micro-Other-02">Azure DevOps</li>
+                  <li class="Micro-Other-02">Jira</li>
+                  <li class="Micro-Other-02">VS Code</li>
+                  <li class="Micro-Other-02">Figma</li>
+                  <li class="Micro-Other-02">BrowserStack</li>
+                  <li class="Micro-Other-02">Claude API</li>
+                  <li class="Micro-Other-02">Claude Code</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="Section-03-exp">
+            <div class="Micro-Other-01">
+              <span class="Micro-Other-01-eyebrow"
+                ><i></i><span data-i18n="exp.eyebrow">Deneyim</span></span
+              >
+            </div>
+
+            <div class="Section-03-exp-item">
+              <div class="Section-03-exp-main">
+                <span
+                  class="Section-03-exp-dot is-active"
+                  aria-hidden="true"
+                ></span>
+                <div>
+                  <div class="role">Frontend Developer</div>
+                  <div class="company" data-i18n="exp.city1">
+                    Feux Digital · İstanbul
+                  </div>
+                </div>
+              </div>
+              <div class="period" data-i18n="exp.period1">
+                Nis 2023 — Haz 2026
+              </div>
+            </div>
+
+            <div class="Section-03-exp-item">
+              <div class="Section-03-exp-main">
+                <span class="Section-03-exp-dot" aria-hidden="true"></span>
+                <div>
+                  <div class="role">Frontend Developer</div>
+                  <div class="company" data-i18n="exp.city2">
+                    BilgeAdam Teknoloji · İstanbul
+                  </div>
+                </div>
+              </div>
+              <div class="period" data-i18n="exp.period2">
+                Haz 2021 — Oca 2022
+              </div>
+            </div>
+
+            <div class="Section-03-exp-item">
+              <div class="Section-03-exp-main">
+                <span class="Section-03-exp-dot" aria-hidden="true"></span>
+                <div>
+                  <div class="role" data-i18n="exp.role3">
+                    Yazılım Mühendisi — Stajyer
+                  </div>
+                  <div class="company" data-i18n="exp.city3">
+                    Szutest Teknoloji · İstanbul
+                  </div>
+                </div>
+              </div>
+              <div class="period" data-i18n="exp.period3">
+                Mar 2021 — Haz 2021
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PROJELER ================= -->
+      <section id="projeler" class="Section-02">
+        <div class="c-wrapper">
+          <div class="Micro-Other-01">
+            <span class="Micro-Other-01-eyebrow"
+              ><i></i><span data-i18n="projects.eyebrow">Projeler</span></span
+            >
+            <h2 class="c-item-01" data-i18n="projects.title">
+              Seçili Çalışmalar
+            </h2>
+            <p class="c-item-02" data-i18n="projects.sub">
+              Uçtan uca geliştirdiğim ürünler ve katkı verdiğim yüksek trafikli
+              kurumsal işlerden bir seçki.
+            </p>
+          </div>
+
+          <ul class="Section-02-grid">
+            <li>
+              <article class="Cards-02">
+                <span class="Cards-02-media"
+                  ><img
+                    src="Content/Images/projects/lidia.svg"
+                    alt="Lidia e-ticaret ekosistemi arayüz görseli"
+                    data-i18n-attr="alt:card.lidia.alt"
+                /></span>
+                <div class="Cards-02-body">
+                  <h3 class="Cards-02-A" data-i18n="card.lidia.title">
+                    Lidia E-ticaret Ekosistemi
+                  </h3>
+                  <p class="Cards-02-B" data-i18n="card.lidia.desc">
+                    PIM, Console ve Merchant Console: uçtan uca tek frontend
+                    mühendisi olarak geliştirdiğim çok modüllü e-ticaret
+                    platformu.
+                  </p>
+                  <ul class="Cards-02-tags">
+                    <li>SCSS</li>
+                    <li>JavaScript</li>
+                    <li>Razor</li>
+                    <li>C#/ASP.NET</li>
+                  </ul>
+                  <span class="Cards-02-note" data-i18n="card.lidia.note"
+                    >Özel proje · Feux Digital</span
+                  >
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="Cards-02">
+                <span class="Cards-02-media"
+                  ><img
+                    src="Content/Images/projects/nft.svg"
+                    alt="NFT Web Side arayüz görseli"
+                    data-i18n-attr="alt:card.nft.alt"
+                /></span>
+                <div class="Cards-02-body">
+                  <h3 class="Cards-02-A">NFT Web Side</h3>
+                  <p class="Cards-02-B" data-i18n="card.nft.desc">
+                    Bir NFT koleksiyonu için modern, animasyonlu ve tamamen
+                    duyarlı tanıtım arayüzü.
+                  </p>
+                  <ul class="Cards-02-tags">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                  </ul>
+                  <a
+                    class="Cards-02-link"
+                    href="https://github.com/yusufbhr/NFT-web-side"
+                    target="_blank"
+                    rel="noopener"
+                    ><span data-i18n="card.nft.link">GitHub'da gör</span>
+                    <span class="arrow" aria-hidden="true">&rarr;</span></a
+                  >
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="Cards-02">
+                <span class="Cards-02-media"
+                  ><img
+                    src="Content/Images/projects/teb.svg"
+                    alt="TEB StartTEB arayüz görseli"
+                    data-i18n-attr="alt:card.teb.alt"
+                /></span>
+                <div class="Cards-02-body">
+                  <h3 class="Cards-02-A">TEB — StartTEB</h3>
+                  <p class="Cards-02-B" data-i18n="card.teb.desc">
+                    startteb.com için kritik özellik geliştirmeleri, performans
+                    iyileştirmeleri ve hata düzeltmeleri.
+                  </p>
+                  <ul class="Cards-02-tags">
+                    <li>JavaScript</li>
+                    <li>SCSS</li>
+                    <li>Razor</li>
+                  </ul>
+                  <a
+                    class="Cards-02-link"
+                    href="https://www.startteb.com"
+                    target="_blank"
+                    rel="noopener"
+                    ><span data-i18n="card.teb.link">Siteyi ziyaret et</span>
+                    <span class="arrow" aria-hidden="true">&rarr;</span></a
+                  >
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="Cards-02">
+                <span class="Cards-02-media"
+                  ><img
+                    src="Content/Images/projects/kale.svg"
+                    alt="Kale kurumsal site arayüz görseli"
+                    data-i18n-attr="alt:card.kale.alt"
+                /></span>
+                <div class="Cards-02-body">
+                  <h3 class="Cards-02-A">Kale</h3>
+                  <p class="Cards-02-B" data-i18n="card.kale.desc">
+                    kale.com.tr kurumsal sitesi için arayüz geliştirmeleri,
+                    çapraz tarayıcı uyumu ve bakım.
+                  </p>
+                  <ul class="Cards-02-tags">
+                    <li>HTML5</li>
+                    <li>SCSS</li>
+                    <li>JavaScript</li>
+                  </ul>
+                  <a
+                    class="Cards-02-link"
+                    href="https://www.kale.com.tr"
+                    target="_blank"
+                    rel="noopener"
+                    ><span data-i18n="card.kale.link">Siteyi ziyaret et</span>
+                    <span class="arrow" aria-hidden="true">&rarr;</span></a
+                  >
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="Cards-02">
+                <span class="Cards-02-media"
+                  ><img
+                    src="Content/Images/projects/kalekim.svg"
+                    alt="Kalekim kurumsal site arayüz görseli"
+                    data-i18n-attr="alt:card.kalekim.alt"
+                /></span>
+                <div class="Cards-02-body">
+                  <h3 class="Cards-02-A">Kalekim</h3>
+                  <p class="Cards-02-B" data-i18n="card.kalekim.desc">
+                    Kalekim kurumsal web arayüzü için özellik geliştirmeleri ve
+                    responsive iyileştirmeler.
+                  </p>
+                  <ul class="Cards-02-tags">
+                    <li>HTML5</li>
+                    <li>SCSS</li>
+                    <li>JavaScript</li>
+                  </ul>
+                  <a
+                    class="Cards-02-link"
+                    href="https://www.kalekim.com"
+                    target="_blank"
+                    rel="noopener"
+                    ><span data-i18n="card.kalekim.link"
+                      >Siteyi ziyaret et</span
+                    >
+                    <span class="arrow" aria-hidden="true">&rarr;</span></a
+                  >
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="Cards-02">
+                <span class="Cards-02-media"
+                  ><img
+                    src="Content/Images/projects/biboya.svg"
+                    alt="Biboya arayüz görseli"
+                    data-i18n-attr="alt:card.biboya.alt"
+                /></span>
+                <div class="Cards-02-body">
+                  <h3 class="Cards-02-A">Biboya</h3>
+                  <p class="Cards-02-B" data-i18n="card.biboya.desc">
+                    Biboya için duyarlı, kullanıcı odaklı arayüz geliştirmeleri
+                    ve sürekli bakım.
+                  </p>
+                  <ul class="Cards-02-tags">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                  </ul>
+                  <span class="Cards-02-note" data-i18n="card.biboya.note"
+                    >Kurumsal katkı · Feux Digital</span
+                  >
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ================= İLETİŞİM ================= -->
+      <section id="iletisim" class="Section-04">
+        <div class="Section-04-glow" aria-hidden="true"></div>
+        <div class="c-wrapper">
+          <div class="Section-04-inner">
+            <span class="Section-04-pill">
+              <i class="dot" aria-hidden="true"></i>
+              <span data-i18n="contact.badge">Yeni projelere açığım</span>
+            </span>
+
+            <h2 class="Section-04-title" data-i18n-html="contact.title">
+              Birlikte harika bir şey <span class="hl">inşa edelim.</span>
+            </h2>
+
+            <p class="Section-04-sub" data-i18n="contact.sub">
+              Bir projen mi var, yoksa sadece merhaba mı demek istiyorsun? Kutum
+              her zaman açık.
+            </p>
+
+            <div class="Section-04-cta">
+              <button
+                type="button"
+                class="Section-04-btn primary"
+                data-copy="krc.bhr34@gmail.com"
+              >
+                krc.bhr34@gmail.com
+                <span
+                  class="Section-04-btn-copied"
+                  aria-live="polite"
+                  data-i18n="contact.copied"
+                  >Kopyalandı ✓</span
+                >
+              </button>
+              <button
+                type="button"
+                class="Section-04-btn ghost"
+                data-copy="0546 246 77 60"
+              >
+                0546 246 77 60
+                <span
+                  class="Section-04-btn-copied"
+                  aria-live="polite"
+                  data-i18n="contact.copied"
+                  >Kopyalandı ✓</span
+                >
+              </button>
+            </div>
+
+            <ul class="Section-04-social">
+              <li>
+                <a
+                  href="https://github.com/yusufbhr"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.79-4.58 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"
+                    />
+                  </svg>
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/yusufbahrikaraca"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"
+                    />
+                  </svg>
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-01">
+      <div class="c-wrapper">
+        <div class="footer-01-top">
+          <a
+            class="logo"
+            href="#hero"
+            aria-label="Ana sayfa"
+            data-i18n-attr="aria-label:aria.homepage"
+          >
+            <img src="Content/Images/brand/monogram.svg" alt="" />
+            <span>yusuf<span class="logo-accent">.dev</span></span>
+          </a>
+          <nav
+            class="nav-01"
+            aria-label="Alt menü"
+            data-i18n-attr="aria-label:aria.subNav"
+          >
+            <ul>
+              <li><a href="#hakkimda" data-i18n="nav.about">Hakkımda</a></li>
+              <li><a href="#projeler" data-i18n="nav.projects">Projeler</a></li>
+              <li><a href="#iletisim" data-i18n="nav.contact">İletişim</a></li>
+              <li>
+                <a
+                  href="https://github.com/yusufbhr"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="c-item-02" aria-hidden="true"></div>
+        <div class="footer-01-bottom">
+          <p class="c-item-03" data-i18n="footer.copyright">
+            © 2026 Yusuf Karaca — Tüm hakları saklıdır.
+          </p>
+          <p class="footer-01-built" data-i18n="footer.built">
+            İstanbul'da, Bricolage Grotesque + Geist ile tasarlandı.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

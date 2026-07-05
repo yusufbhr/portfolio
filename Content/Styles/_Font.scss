@@ -1,0 +1,14 @@
+@use "Base/abstracts" as *;
+
+// Geist + Bricolage Grotesque are loaded via <link> in index.html (Google
+// Fonts); these stacks fall back to the native UI font when offline.
+body {
+    font-family: $font-sans;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

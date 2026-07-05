@@ -1,0 +1,196 @@
+@use "../../Base/abstracts" as *;
+
+// ----------------------------------------------------------------------------
+// Section-03 — About + Skills + Experience
+// ----------------------------------------------------------------------------
+.Section-03 {
+    border-top: 1px solid $border-700;
+    border-bottom: 1px solid $border-700;
+    background: $bg-850;
+
+    @include mobile {
+        padding: 72px 0;
+    }
+
+    @include tablet {
+        padding: 96px 0;
+    }
+
+    @include desktop {
+        padding: 120px 0;
+    }
+
+    .Section-03-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // Intro — eyebrow/title + lead paragraphs + stats, centred but given
+    // more breathing room than a tight 640px column.
+    .Section-03-left {
+        width: 100%;
+        max-width: 820px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .Section-03-lead {
+        max-width: 680px;
+        margin-top: 20px;
+        font-size: 17px;
+        line-height: 1.7;
+        color: $text-400;
+        text-align: left;
+
+        & + & {
+            margin-top: 16px;
+        }
+    }
+
+    .Section-03-stats {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 56px;
+        margin-top: 40px;
+        padding-top: 32px;
+        border-top: 1px solid $border-700;
+    }
+
+    // Skills marquee — single seamless infinite-scrolling strip between two
+    // rule lines, replacing the old per-category rows. Content (every skill
+    // name, same order) is unchanged; only the presentation is one continuous
+    // band that never pauses.
+    .Section-03-marquee {
+        width: 100%;
+        margin-top: 64px;
+        padding: 28px 0;
+        border-top: 1px solid $border-700;
+        border-bottom: 1px solid $border-700;
+    }
+
+    .Section-03-marquee-viewport {
+        overflow: hidden;
+        // Vertical buffer so the chips' rotating-border ::before (which
+        // extends 2px past each chip's top/bottom) isn't clipped by this
+        // container's own tight-fitting box — only the horizontal overflow
+        // (the duplicated track half) needs hiding here.
+        padding: 4px 0;
+        mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+
+    .Section-03-marquee-track {
+        display: flex;
+        width: max-content;
+        gap: 10px;
+        animation: Section-03-marquee-scroll 46s linear infinite;
+        will-change: transform;
+    }
+
+    .Section-03-marquee-group {
+        display: contents;
+    }
+
+    @include mobile {
+        .Section-03-marquee-track {
+            gap: 8px;
+        }
+
+        .Section-03-marquee .Micro-Other-02 {
+            padding: 8px 12px;
+            font-size: 13px;
+        }
+    }
+
+    // Full-width — experience list
+    .Section-03-exp {
+        margin-top: 72px;
+    }
+
+    .Section-03-exp-item {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 24px 4px;
+        border-top: 1px solid $border-700;
+        transition: padding-left 0.3s $ease-out, background 0.3s $ease-out;
+
+        &:last-child {
+            border-bottom: 1px solid $border-700;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        &:hover {
+            @include desktop {
+                padding-left: 14px;
+            }
+        }
+
+        .Section-03-exp-main {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .Section-03-exp-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: $border-600;
+            flex-shrink: 0;
+
+            &.is-active {
+                background: $accent-green;
+                box-shadow: 0 0 10px rgba($accent-green, 0.7);
+            }
+        }
+
+        .role {
+            font-size: 18px;
+            font-weight: 600;
+            color: $text-000;
+        }
+
+        .company {
+            margin-top: 4px;
+            font-size: 15px;
+            color: $text-400;
+        }
+
+        .period {
+            flex-shrink: 0;
+            font-size: 14px;
+            color: $text-500;
+            font-variant-numeric: tabular-nums;
+        }
+    }
+}
+
+@keyframes Section-03-marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .Section-03-marquee-track {
+        animation: none;
+    }
+
+    .Section-03-marquee-group[aria-hidden] {
+        display: none;
+    }
+}

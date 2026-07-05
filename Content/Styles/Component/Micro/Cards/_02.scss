@@ -1,0 +1,116 @@
+@use "../../../Base/abstracts" as *;
+
+// ----------------------------------------------------------------------------
+// Cards-02 — Modern Dark project card (media + body + tags + link)
+// ----------------------------------------------------------------------------
+.Cards-02 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: $bg-700;
+    border: 1px solid $border-700;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.3s $ease-out, border-color 0.3s $ease-out,
+        box-shadow 0.3s $ease-out;
+
+    &:hover {
+        transform: translateY(-6px);
+        border-color: rgba($brand-600, 0.6);
+        box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.75);
+
+        .Cards-02-media img {
+            transform: scale(1.05);
+        }
+
+        .Cards-02-link {
+            .arrow {
+                transform: translateX(4px);
+            }
+        }
+    }
+
+    .Cards-02-media {
+        display: block;
+        overflow: hidden;
+        aspect-ratio: 8 / 5;
+        background: $bg-850;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s $ease-out;
+        }
+    }
+
+    .Cards-02-body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 12px;
+        padding: 26px 26px 28px;
+
+        @include mobile {
+            padding: 22px 20px 24px;
+        }
+    }
+
+    .Cards-02-A {
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 1.25;
+        color: $text-000;
+    }
+
+    .Cards-02-B {
+        font-size: 15px;
+        line-height: 1.6;
+        color: $text-400;
+    }
+
+    .Cards-02-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 2px;
+
+        li {
+            padding: 6px 11px;
+            border: 1px solid $border-700;
+            border-radius: 8px;
+            background: $bg-800;
+            font-size: 12.5px;
+            font-weight: 500;
+            color: $text-300;
+        }
+    }
+
+    .Cards-02-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        margin-top: auto;
+        padding-top: 6px;
+        font-size: 14.5px;
+        font-weight: 600;
+        color: $brand-500;
+
+        .arrow {
+            transition: transform 0.3s $ease-out;
+        }
+    }
+
+    // Private / no-link projects
+    .Cards-02-note {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        margin-top: auto;
+        padding-top: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        color: $text-500;
+    }
+}

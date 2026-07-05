@@ -1,0 +1,75 @@
+@use "../../../Base/abstracts" as *;
+
+// ----------------------------------------------------------------------------
+// Micro-Other-02 — skill / technology chip with a continuously rotating
+// gradient border ring. The ring is painted by ::before using the same
+// inset/padding/mask-composite technique as the Section-02 card glow
+// (see _Section02.scss) — no extra wrapper markup needed.
+// ----------------------------------------------------------------------------
+@property --Micro-Other-02-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.Micro-Other-02 {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background: #101012;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: $text-000;
+  white-space: nowrap;
+  transition: box-shadow 0.25s $ease-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    padding: 2px;
+    border-radius: 10px;
+    background: conic-gradient(
+      from var(--Micro-Other-02-angle),
+      $brand-400,
+      #ec4899,
+      #f97316,
+      $brand-500,
+      $brand-400
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    animation: Micro-Other-02-rotate 3.5s linear infinite;
+    pointer-events: none;
+  }
+
+  &:hover {
+    box-shadow: 0 0 18px rgba($brand-500, 0.35);
+
+    &::before {
+      animation-duration: 1.8s;
+    }
+  }
+}
+
+@keyframes Micro-Other-02-rotate {
+  to {
+    --Micro-Other-02-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Micro-Other-02::before {
+    animation: none;
+  }
+}

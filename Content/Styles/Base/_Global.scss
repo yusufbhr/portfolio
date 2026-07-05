@@ -1,0 +1,93 @@
+@use "sass:string";
+
+// ----------------------------------------------------------------------------
+// Media query breakpoints (unitless px values)
+// ----------------------------------------------------------------------------
+$mq-xs1: 0;
+$mq-xs2: 420;
+$mq-sm1: 768;
+$mq-sm2: 1024;
+$mq-md: 1320;
+$mq-lg: 1680;
+$mq-xl: 1920;
+
+// Wrapper widths
+$c-wrapper-md: 1300px;
+$c-wrapper-sm: 760px;
+$c-wrapper-xs: calc(100% - 32px);
+
+// ----------------------------------------------------------------------------
+// Typography & motion tokens (Modern Dark)
+// ----------------------------------------------------------------------------
+$font-sans: 'Geist', system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-display: 'Bricolage Grotesque', 'Geist', system-ui, sans-serif;
+
+// Expo-out easing used across hovers/reveals.
+$ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+// ----------------------------------------------------------------------------
+// Responsive mixins — use these instead of hand-writing media queries.
+//   .foo { @include mobile { ... } @include desktop { ... } }
+// ----------------------------------------------------------------------------
+@mixin mobile {
+    @media all and (max-width: #{$mq-sm1 - 1}px) { @content; }
+}
+
+@mixin tablet {
+    @media all and (min-width: #{$mq-sm1}px) and (max-width: #{$mq-md - 1}px) { @content; }
+}
+
+// Everything below the desktop breakpoint (mobile + tablet).
+@mixin below-desktop {
+    @media all and (max-width: #{$mq-md - 1}px) { @content; }
+}
+
+@mixin desktop {
+    @media all and (min-width: #{$mq-md}px) { @content; }
+}
+
+// ----------------------------------------------------------------------------
+// Transition / transform helpers
+// ----------------------------------------------------------------------------
+@mixin dynamicTransition($props...) {
+    -webkit-transition: $props;
+    transition: $props;
+}
+
+@mixin dynamicTransform($value) {
+    -webkit-transform: $value;
+    transform: $value;
+}
+
+// Slides the element on the X axis on hover.
+@mixin transform-X-animation($duration, $amount) {
+    @include dynamicTransition(transform $duration);
+    &:hover {
+        @include dynamicTransform(translateX($amount));
+    }
+}
+
+// ----------------------------------------------------------------------------
+// String / SVG helper functions
+// ----------------------------------------------------------------------------
+@function str-replace($value, $search, $replace: '') {
+    $index: string.index($value, $search);
+    @if $index {
+        @return string.slice($value, 1, $index - 1) + $replace +
+            str-replace(string.slice($value, $index + string.length($search)), $search, $replace);
+    }
+    @return $value;
+}
+
+@function url-encode($value) {
+    $map: ("%": "%25", "<": "%3C", ">": "%3E", " ": "%20", "!": "%21", "*": "%2A", "'": "%27", '"': "%22", "(": "%28", ")": "%29", ";": "%3B", ":": "%3A", "@": "%40", "&": "%26", "=": "%3D", "+": "%2B", "$": "%24", ",": "%2C", "/": "%2F", "?": "%3F", "#": "%23", "[": "%5B", "]": "%5D");
+    $new: $value;
+    @each $search, $replace in $map {
+        $new: str-replace($new, $search, $replace);
+    }
+    @return $new;
+}
+
+@function svg-background-image($value) {
+    @return url('data:image/svg+xml,#{url-encode($value)}');
+}

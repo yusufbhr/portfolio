@@ -1,0 +1,14 @@
+{
+  "name": "content-starter",
+  "version": "1.0.0",
+  "description": "Default SCSS starter (Base + Component architecture, modern @use/@forward).",
+  "private": true,
+  "scripts": {
+    "build": "sass Content/Styles/Base.scss:Content/Styles/Base.css --no-source-map --style=compressed",
+    "dev": "sass Content/Styles/Base.scss:Content/Styles/Base.css --no-source-map",
+    "watch": "sass --watch Content/Styles/Base.scss:Content/Styles/Base.css"
+  },
+  "devDependencies": {
+    "sass": "^1.80.0"
+  }
+}

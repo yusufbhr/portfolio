@@ -1,0 +1,198 @@
+@use "../../Base/abstracts" as *;
+
+// ----------------------------------------------------------------------------
+// Section-04 — Contact CTA
+// ----------------------------------------------------------------------------
+.Section-04 {
+    position: relative;
+    overflow: hidden;
+
+    @include mobile {
+        padding: 88px 0;
+    }
+
+    @include tablet {
+        padding: 120px 0;
+    }
+
+    @include desktop {
+        padding: 148px 0;
+    }
+
+    .Section-04-glow {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background: radial-gradient(
+            50% 60% at 50% 8%,
+            rgba($brand-600, 0.22),
+            transparent 70%
+        );
+    }
+
+    .Section-04-inner {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .Section-04-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 8px 15px 8px 13px;
+        border: 1px solid $border-700;
+        border-radius: 100px;
+        background: rgba($bg-800, 0.7);
+        font-size: 13px;
+        font-weight: 500;
+        color: $text-300;
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: $accent-green;
+            box-shadow: 0 0 0 4px rgba($accent-green, 0.18);
+        }
+    }
+
+    .Section-04-title {
+        max-width: 16ch;
+        margin-top: 26px;
+        font-family: $font-display;
+        font-weight: 800;
+        line-height: 1.06;
+        letter-spacing: -0.025em;
+        color: $text-000;
+
+        @include mobile {
+            font-size: 40px;
+        }
+
+        @include tablet {
+            font-size: 56px;
+        }
+
+        @include desktop {
+            font-size: 66px;
+        }
+
+        .hl {
+            background: linear-gradient(120deg, $brand-500, $brand-400);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+    }
+
+    .Section-04-sub {
+        max-width: 540px;
+        margin-top: 22px;
+        font-size: 18px;
+        line-height: 1.6;
+        color: $text-400;
+    }
+
+    .Section-04-cta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 36px;
+    }
+
+    .Section-04-btn {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 16px 28px;
+        border-radius: 12px;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 600;
+        appearance: none;
+        cursor: pointer;
+        transition: transform 0.25s $ease-out, background 0.25s $ease-out,
+            border-color 0.25s $ease-out, box-shadow 0.25s $ease-out;
+
+        &.primary {
+            background: $brand-600;
+            color: $neutral-000;
+            border: 1px solid transparent;
+
+            &:hover {
+                background: $brand-500;
+                transform: translateY(-2px);
+                box-shadow: 0 16px 32px -16px rgba($brand-600, 0.9);
+            }
+        }
+
+        &.ghost {
+            background: $bg-700;
+            color: $text-000;
+            border: 1px solid $border-600;
+
+            &:hover {
+                transform: translateY(-2px);
+                border-color: rgba($brand-600, 0.6);
+                background: $bg-600;
+            }
+        }
+
+        &.is-copied .Section-04-btn-copied {
+            opacity: 1;
+            transform: translate(-50%, -4px);
+        }
+    }
+
+    .Section-04-btn-copied {
+        position: absolute;
+        bottom: calc(100% + 8px);
+        left: 50%;
+        transform: translate(-50%, 0);
+        padding: 5px 10px;
+        border-radius: 8px;
+        background: $bg-800;
+        color: $accent-green;
+        font-size: 12px;
+        font-weight: 600;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s $ease-out, transform 0.2s $ease-out;
+    }
+
+    .Section-04-social {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 28px;
+        margin-top: 40px;
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            color: $text-400;
+            transition: color 0.25s $ease-out;
+
+            &:hover {
+                color: $text-000;
+            }
+
+            svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@use "../../../Base/abstracts" as *;
+
+// ----------------------------------------------------------------------------
+// Micro-Other-03 — stat block (value + label)
+// ----------------------------------------------------------------------------
+.Micro-Other-03 {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .c-item-01 {
+        font-family: $font-display;
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        color: $text-000;
+
+        @include mobile {
+            font-size: 34px;
+        }
+    }
+
+    .c-item-02 {
+        font-size: 14px;
+        color: $text-400;
+    }
+}

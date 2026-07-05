@@ -1,0 +1,96 @@
+@use "../../Base/abstracts" as *;
+
+// ----------------------------------------------------------------------------
+// Section-02 — Projects
+// ----------------------------------------------------------------------------
+.Section-02 {
+    @include mobile {
+        padding: 72px 0;
+    }
+
+    @include tablet {
+        padding: 96px 0;
+    }
+
+    @include desktop {
+        padding: 120px 0;
+    }
+
+    .Section-02-grid {
+        display: grid;
+        gap: 24px;
+        margin-top: 52px;
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include desktop {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        // ------------------------------------------------------------------
+        // Cursor-tracked spotlight glow — wraps Cards-02 without touching it.
+        // --x/--y/--xp are set on :root by Portfolio.Glow (Js/main.js);
+        // background-attachment: fixed anchors the gradient to the viewport
+        // so its position lines up with the real cursor for every card.
+        // ------------------------------------------------------------------
+        > li {
+            position: relative;
+            border-radius: 18px;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                inset: -2px;
+                padding: 2px;
+                border-radius: 18px;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                pointer-events: none;
+                opacity: 0;
+                transition: opacity 0.4s $ease-out;
+                -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+                -webkit-mask-composite: xor;
+                mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+                mask-composite: exclude;
+            }
+
+            &::before {
+                z-index: 1;
+                background-image: radial-gradient(
+                    200px 200px at calc(var(--x, -9999) * 1px) calc(var(--y, -9999) * 1px),
+                    hsl(calc(217 + (var(--xp, 0.5) * 50)) 90% 58% / 0.95),
+                    transparent 100%
+                );
+                filter: brightness(1.5);
+            }
+
+            &::after {
+                z-index: 2;
+                background-image: radial-gradient(
+                    130px 130px at calc(var(--x, -9999) * 1px) calc(var(--y, -9999) * 1px),
+                    hsl(0 0% 100% / 0.4),
+                    transparent 100%
+                );
+            }
+
+            &:hover::before,
+            &:hover::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .Section-02-grid > li::before,
+    .Section-02-grid > li::after {
+        display: none;
+    }
+}

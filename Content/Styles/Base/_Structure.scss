@@ -1,0 +1,63 @@
+@use "abstracts" as *;
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+    // Fixed header offset for in-page anchors.
+    scroll-padding-top: 96px;
+}
+
+// Respect users who prefer reduced motion.
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    min-height: 100%;
+    background-color: $body-bg;
+    color: $body-fg;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+.c-wrapper {
+    margin: 0 auto;
+
+    @include mobile {
+        width: $c-wrapper-xs;
+    }
+
+    @include tablet {
+        width: $c-wrapper-sm;
+    }
+
+    @include desktop {
+        width: $c-wrapper-md;
+    }
+}
+
+// ----------------------------------------------------------------------------
+// Scroll-reveal utility — the `reveal` class is added by JS only, so no-JS
+// visitors always see content. Disabled under reduced-motion.
+// ----------------------------------------------------------------------------
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s $ease-out, transform 0.6s $ease-out;
+
+    &.is-visible {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}

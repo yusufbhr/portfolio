@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="kale projesi görseli">
+  <defs>
+    <linearGradient id="g_kale" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F59E0B"/>
+      <stop offset="1" stop-color="#F97316"/>
+    </linearGradient>
+    <radialGradient id="glow_kale" cx="0.72" cy="0.18" r="0.9">
+      <stop offset="0" stop-color="#F97316" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="barF59E0B" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F59E0B" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#F97316"/>
+    </linearGradient>
+    <filter id="soft_kale" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="750" fill="#0E0E13"/>
+  <rect width="1200" height="750" fill="url(#glow_kale)"/>
+  <circle cx="980" cy="120" r="220" fill="#F97316" opacity="0.30" filter="url(#soft_kale)"/>
+  <circle cx="170" cy="640" r="180" fill="#F59E0B" opacity="0.22" filter="url(#soft_kale)"/>
+
+  <!-- app window -->
+  <g>
+    <rect x="150" y="150" width="900" height="470" rx="26" fill="#15151B" stroke="#2A2A34" stroke-width="1.5"/>
+    <path d="M150 176 a26 26 0 0 1 26 -26 h848 a26 26 0 0 1 26 26 v46 h-900 z" fill="#1C1C24"/>
+    <circle cx="188" cy="199" r="8" fill="#3A3A46"/>
+    <circle cx="216" cy="199" r="8" fill="#3A3A46"/>
+    <circle cx="244" cy="199" r="8" fill="#3A3A46"/>
+    <rect x="300" y="188" width="520" height="22" rx="11" fill="#22222C"/>
+    <!-- sidebar -->
+    <rect x="176" y="238" width="58" height="366" fill="#111117"/>
+    <rect x="196" y="262" width="20" height="20" rx="6" fill="url(#g_kale)"/>
+    <rect x="196" y="300" width="20" height="14" rx="5" fill="#2E2E38"/>
+    <rect x="196" y="330" width="20" height="14" rx="5" fill="#2E2E38"/>
+    <rect x="196" y="360" width="20" height="14" rx="5" fill="#2E2E38"/>
+    <!-- header row -->
+    <rect x="250" y="262" width="220" height="18" rx="9" fill="#33333E"/>
+    <rect x="900" y="258" width="120" height="26" rx="13" fill="url(#g_kale)" opacity="0.9"/>
+    
+    <rect x="250" y="470" width="224" height="150" rx="12" fill="url(#g_kale)" /><rect x="266" y="490" width="123" height="12" rx="6" fill="#ffffff" opacity="0.9"/><rect x="266" y="514" width="179" height="10" rx="5" fill="#ffffff" opacity="0.5"/><rect x="498" y="470" width="224" height="150" rx="12" fill="#22222B" stroke="#2E2E38"/><rect x="514" y="490" width="123" height="12" rx="6" fill="#3A3A46" opacity="1"/><rect x="514" y="514" width="179" height="10" rx="5" fill="#33333E" opacity="1"/><rect x="746" y="470" width="224" height="150" rx="12" fill="#22222B" stroke="#2E2E38"/><rect x="762" y="490" width="123" height="12" rx="6" fill="#3A3A46" opacity="1"/><rect x="762" y="514" width="179" height="10" rx="5" fill="#33333E" opacity="1"/>
+  </g>
+
+  <!-- badge -->
+  <g>
+    <rect x="150" y="656" width="140" height="44" rx="22" fill="#16161C" stroke="#2A2A34"/>
+    <circle cx="176" cy="678" r="5" fill="#F97316"/>
+    <text x="192" y="684" font-family="Inter, Segoe UI, sans-serif" font-size="19" font-weight="600" fill="#C7C7D1">Kurumsal</text>
+  </g>
+  <!-- big monogram -->
+  <text x="1050" y="700" text-anchor="end" font-family="Syne, Inter, sans-serif" font-size="150" font-weight="800" fill="url(#g_kale)" opacity="0.9">K</text>
+</svg>

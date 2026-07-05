@@ -1,0 +1,54 @@
+@use "../../../Base/abstracts" as *;
+
+// ----------------------------------------------------------------------------
+// Micro-Other-01 — section header (eyebrow + title + subtitle)
+// ----------------------------------------------------------------------------
+.Micro-Other-01 {
+    .Micro-Other-01-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: $brand-500;
+
+        i {
+            display: inline-block;
+            width: 26px;
+            height: 2px;
+            border-radius: 2px;
+            background: $brand-600;
+        }
+    }
+
+    .c-item-01 {
+        font-family: $font-display;
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        color: $text-000;
+
+        @include mobile {
+            font-size: 34px;
+        }
+
+        @include tablet {
+            font-size: 40px;
+        }
+
+        @include desktop {
+            font-size: 46px;
+        }
+    }
+
+    .c-item-02 {
+        max-width: 640px;
+        margin-top: 16px;
+        font-size: 17px;
+        line-height: 1.6;
+        color: $text-400;
+    }
+}

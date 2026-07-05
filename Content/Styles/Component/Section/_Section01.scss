@@ -1,0 +1,185 @@
+@use "../../Base/abstracts" as *;
+
+// ----------------------------------------------------------------------------
+// Section-01 — Hero
+// ----------------------------------------------------------------------------
+.Section-01 {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: linear-gradient(180deg, #000000 0%, #0a0a12 100%);
+
+    // Ambient radial glows behind the content.
+    .Section-01-glow {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background:
+            radial-gradient(46% 40% at 78% 12%, rgba($brand-600, 0.30), transparent 70%),
+            radial-gradient(40% 42% at 8% 70%, rgba($brand-400, 0.22), transparent 70%);
+    }
+
+    // Three.js ribbon canvas — sits above the ambient glow, behind the content.
+    .Section-01-canvas {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .c-wrapper {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 96px;
+        padding-bottom: 96px;
+
+        @include mobile {
+            padding-top: 118px;
+        }
+    }
+
+    .Section-01-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 8px 15px 8px 13px;
+        border: 1px solid $border-700;
+        border-radius: 100px;
+        background: rgba($bg-800, 0.7);
+        font-size: 13px;
+        font-weight: 500;
+        color: $text-300;
+
+        .dot {
+            position: relative;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: $accent-green;
+            box-shadow: 0 0 0 4px rgba($accent-green, 0.18);
+
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: 50%;
+                background: $accent-green;
+                animation: Section-01-dot-pulse 1.8s ease-out infinite;
+            }
+        }
+    }
+
+    .b-item {
+        margin-top: 28px;
+        max-width: 15ch;
+        font-family: $font-display;
+        font-weight: 800;
+        line-height: 1.04;
+        letter-spacing: -0.025em;
+        color: $text-000;
+        font-size: clamp(2.625rem, 1.9rem + 3.2vw, 4.875rem);
+
+        .hl {
+            background: linear-gradient(120deg, $brand-500, $brand-400);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+    }
+
+    .b-item-01 {
+        max-width: 600px;
+        margin-top: 26px;
+        font-size: 19px;
+        line-height: 1.6;
+        color: $text-400;
+
+        @include mobile {
+            font-size: 17px;
+        }
+    }
+
+    .Section-01-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 36px;
+    }
+
+    // Primary button
+    .b-item-02 {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 15px 26px;
+        border: 1px solid transparent;
+        border-radius: 12px;
+        background: $brand-600;
+        font-size: 16px;
+        font-weight: 600;
+        color: $neutral-000;
+        transition: transform 0.25s $ease-out, background 0.25s $ease-out,
+            box-shadow 0.25s $ease-out;
+
+        &:hover {
+            background: $brand-500;
+            transform: translateY(-2px);
+            box-shadow: 0 16px 32px -16px rgba($brand-600, 0.9);
+        }
+    }
+
+    // Secondary button
+    .b-item-03 {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 15px 26px;
+        border: 1px solid $border-600;
+        border-radius: 12px;
+        background: $bg-700;
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-000;
+        transition: transform 0.25s $ease-out, border-color 0.25s $ease-out,
+            background 0.25s $ease-out;
+
+        &:hover {
+            transform: translateY(-2px);
+            border-color: rgba($brand-600, 0.6);
+            background: $bg-600;
+        }
+    }
+}
+
+@keyframes Section-01-dot-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(2.6);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .Section-01-pill .dot::after {
+        animation: none;
+        display: none;
+    }
+
+    .Section-01-canvas {
+        display: none;
+    }
+}
