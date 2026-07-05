@@ -262,8 +262,8 @@ Portfolio.I18n = {
             en: "For 4+ years I've worked with modern web standards, responsive design, and component-driven architecture. I care about the details that make an interface feel flawless — performance, accessibility, and fluid interaction."
         },
         "about.p2": {
-            tr: "Feux Digital'de Lidia e-ticaret ekosisteminin (PIM, Console, Merchant Console) tek frontend mühendisiyim; ayrıca TEB, Kale, Kalekim ve Biboya gibi yüksek trafikli kurumsal siteler için kritik geliştirmeler yaptım.",
-            en: "At Feux Digital, I'm the sole frontend engineer for the Lidia e-commerce ecosystem (PIM, Console, Merchant Console); I've also shipped critical work for high-traffic corporate sites like TEB, Kale, Kalekim, and Biboya."
+            tr: "Feux Digital'de Lidia e-ticaret ekosisteminin (PIM, Console, Merchant Console) tek frontend mühendisiyim; ayrıca TEB, Kale, Kalekim ve Bi'Boya gibi yüksek trafikli kurumsal siteler için kritik geliştirmeler yaptım.",
+            en: "At Feux Digital, I'm the sole frontend engineer for the Lidia e-commerce ecosystem (PIM, Console, Merchant Console); I've also shipped critical work for high-traffic corporate sites like TEB, Kale, Kalekim, and Bi'Boya."
         },
         "about.stat1": { tr: "Yıl deneyim", en: "Years of experience" },
         "about.stat2": { tr: "Kurumsal proje", en: "Corporate projects" },
@@ -322,12 +322,12 @@ Portfolio.I18n = {
         },
         "card.kalekim.link": { tr: "Siteyi ziyaret et", en: "Visit site" },
 
-        "card.biboya.alt": { tr: "Biboya arayüz görseli", en: "Biboya interface visual" },
+        "card.biboya.alt": { tr: "Bi'Boya arayüz görseli", en: "Bi'Boya interface visual" },
         "card.biboya.desc": {
-            tr: "Biboya için duyarlı, kullanıcı odaklı arayüz geliştirmeleri ve sürekli bakım.",
-            en: "Responsive, user-focused interface development and ongoing maintenance for Biboya."
+            tr: "Bi'Boya için duyarlı, kullanıcı odaklı arayüz geliştirmeleri ve sürekli bakım.",
+            en: "Responsive, user-focused interface development and ongoing maintenance for Bi'Boya."
         },
-        "card.biboya.note": { tr: "Kurumsal katkı · Feux Digital", en: "Corporate contribution · Feux Digital" },
+        "card.biboya.link": { tr: "Siteyi ziyaret et", en: "Visit site" },
 
         "contact.badge": { tr: "Yeni projelere açığım", en: "Open to new projects" },
         "contact.title": {
