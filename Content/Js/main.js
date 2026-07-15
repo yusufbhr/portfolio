@@ -286,6 +286,13 @@ Portfolio.I18n = {
             en: "A selection of products I've built end to end and high-traffic corporate work I've contributed to."
         },
 
+        "card.toplamio.alt": { tr: "Toplamio hesaplama platformu arayüz görseli", en: "Toplamio calculation platform interface visual" },
+        "card.toplamio.desc": {
+            tr: "Güncel resmî verilerle çalışan 18 hesaplayıcı ve dilekçe oluşturucu içeren Türkçe hesaplama platformu — tasarımından SEO'suna uçtan uca geliştirdiğim canlı ürünüm.",
+            en: "A Turkish calculation platform with 18 calculators and petition generators powered by up-to-date official data — my live product, built end to end from design to SEO."
+        },
+        "card.toplamio.link": { tr: "toplamio.com'u ziyaret et", en: "Visit toplamio.com" },
+
         "card.lidia.alt": { tr: "Lidia e-ticaret ekosistemi arayüz görseli", en: "Lidia e-commerce ecosystem interface visual" },
         "card.lidia.title": { tr: "Lidia E-ticaret Ekosistemi", en: "Lidia E-commerce Ecosystem" },
         "card.lidia.desc": {
